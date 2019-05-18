@@ -43,7 +43,7 @@ class CritiMon extends CritiMonBase
                     $this->cookies[$key] = $value;
                 }
             }
-            $curl = $this->returnCurlClient(array("ApplicationID" => $this->app_id, "DeviceID" => $this->device_id), "initialise");
+            $curl = $this->returnCurlClient(array("ApplicationID" => $this->app_id, "DeviceID" => $this->device_id, "AppVersion" => $this->app_version), "initialise");
 
             $response = curl_exec($curl);
             $err = curl_error($curl);
