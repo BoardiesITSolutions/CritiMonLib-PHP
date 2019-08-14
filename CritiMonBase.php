@@ -1,7 +1,6 @@
 <?php
 
-
-define("critimon_url", "https://critimon-engine.boardiesitsolutions.com");
+define("critimon_url", "https://engine.critimon.com");
 
 class CritiMonBase
 {
@@ -12,7 +11,12 @@ class CritiMonBase
     protected $cookies;
     protected $initialised = false;
 
-
+    /**
+     * CritiMonBase constructor.
+     * @param $app_id
+     * @param $api_key
+     * @param $version_number
+     */
     public function __construct($app_id, $api_key, $version_number)
     {
         $this->app_id = $app_id;
@@ -20,6 +24,11 @@ class CritiMonBase
         $this->app_version = $version_number;
     }
 
+    /**
+     * @param $postFields
+     * @param $method
+     * @return false|resource
+     */
     protected function returnCurlClient($postFields, $method)
     {
         $curl = curl_init();
@@ -65,12 +74,6 @@ class CritiMonBase
             CURLOPT_SSL_VERIFYPEER => 0,
             CURLOPT_HTTPHEADER => $headers
         ));
-
-        /*if (isset($this->session_id) && !empty($this->session_id))
-        {
-            curl_setopt($curl, CURLOPT_COOKIE, "SESSIONID=".$this->session_id);
-        }*/
-
         return $curl;
     }
 

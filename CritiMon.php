@@ -308,6 +308,11 @@ class CritiMon extends CritiMonBase
                 {
                     //Reset the cookie to expire in 10 minutes from now
                     setcookie("device_id", $this->device_id, time() + (60 * 10), critimon_url);
+                    $jsonData = json_decode($response);
+                    if ($jsonData->result === 5)
+                    {
+                        $this->initialise();
+                    }
                 }
                 else
                 {
