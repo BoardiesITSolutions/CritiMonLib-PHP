@@ -96,7 +96,7 @@ For example, if you missed a semicolon (;) on the end of a line yoy will receive
 a parse error, but because this stops the actual PHP script from being processed, this will
 not be picked up by CritiMon. 
 
-Sign up for a free account by visiting https://critimon.boardiesitsolutions.com
+Sign up for a free account by visiting https://critimon.com
 
 CritiMon - Copyright &copy; 2019 - Boardies IT Solutions
 
