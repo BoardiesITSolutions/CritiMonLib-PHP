@@ -59,7 +59,7 @@ catch (Exception $ex)
 {
     $critimon->reportCrash($ex, CritiMonSeverity::MEDIUM);
     //Or you can send custom parameters for extra debug purposes
-    $critimon->reportCrash($ex, CritiMonSeverity::Medium, array("my_key" => "my_value"));
+    $critimon->reportCrash($ex, CritiMonSeverity::MEDIUM, array("my_key" => "my_value"));
 }
 ```
 
